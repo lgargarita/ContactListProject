@@ -1,7 +1,7 @@
 /**
- * 
- * Creates an array that stores Contact objects
- *
+ * Defines reusable class List
+ * Creates array of Contact objects to store contacts
+ * Has methods for searching and saving to and reading from file
  */
 
 public class List {
@@ -13,19 +13,19 @@ public class List {
 	 * Searches the array by last name and prints results to console
 	 */
 	public void searchByLastName(){
-		System.out.print("DISPLAY CONTACTS BY LAST NAME"); //TODO display all contacts with specified last name
+		System.out.println("DISPLAY CONTACTS BY LAST NAME"); //TODO display all contacts with specified last name
 	}
 	/**
 	 * Searches the array by e-mail address and displays results to console
 	 */
 	public void searchByEmail(){
-		System.out.print("DISPLAY CONTACTS BY EMAIL ADDRESS");; //TODO display all contacts with specified e-mail address
+		System.out.println("DISPLAY CONTACTS BY EMAIL ADDRESS");; //TODO display all contacts with specified e-mail address
 	}
 	/**
 	 * Searches the array by zip code and displays results to console
 	 */
 	public void searchByZip(){
-		System.out.print("DISPLAY CONTACTS BY ZIP CODE"); //TODO display all contacts with specified zip code
+		System.out.println("DISPLAY CONTACTS BY ZIP CODE"); //TODO display all contacts with specified zip code
 	}
 	/**
 	 * Prints entire contact list
@@ -43,6 +43,6 @@ public class List {
 	 * Reads from file
 	 */
 	public void readFile(){
-		System.out.println("READ FROM FILE")
+		System.out.println("READ FROM FILE");
 	}
 }

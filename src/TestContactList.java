@@ -1,3 +1,6 @@
+/**
+ * Tests Contact and List classes with console UI
+ */
 import java.util.*;
 
 public class TestContactList 
@@ -64,3 +67,90 @@ public class TestContactList
 		console.close();
 	}
 }
+/*
+Welcome to the QualitySoft Address Book!
+
+What would you like to do?
+1: Enter a new Contact
+2: Retrieve a Contact
+3: Print a Contact List
+4: Quit
+Please enter a number from 1-4
+1
+PROMPT USER, SET CONTACT VARIABLES
+STORE CONTACT TO ARRAY
+
+Welcome to the QualitySoft Address Book!
+
+What would you like to do?
+1: Enter a new Contact
+2: Retrieve a Contact
+3: Print a Contact List
+4: Quit
+Please enter a number from 1-4
+2
+Retrieve contacts by...
+1: Last Name
+2: E-mail address
+3: Zip Code
+Please enter a number from 1-3
+1
+DISPLAY CONTACTS BY LAST NAME
+
+Welcome to the QualitySoft Address Book!
+
+What would you like to do?
+1: Enter a new Contact
+2: Retrieve a Contact
+3: Print a Contact List
+4: Quit
+Please enter a number from 1-4
+2
+Retrieve contacts by...
+1: Last Name
+2: E-mail address
+3: Zip Code
+Please enter a number from 1-3
+2
+DISPLAY CONTACTS BY EMAIL ADDRESS
+
+Welcome to the QualitySoft Address Book!
+
+What would you like to do?
+1: Enter a new Contact
+2: Retrieve a Contact
+3: Print a Contact List
+4: Quit
+Please enter a number from 1-4
+2
+Retrieve contacts by...
+1: Last Name
+2: E-mail address
+3: Zip Code
+Please enter a number from 1-3
+3
+DISPLAY CONTACTS BY ZIP CODE
+
+Welcome to the QualitySoft Address Book!
+
+What would you like to do?
+1: Enter a new Contact
+2: Retrieve a Contact
+3: Print a Contact List
+4: Quit
+Please enter a number from 1-4
+3
+PRINT ALL CONTACTS
+
+Welcome to the QualitySoft Address Book!
+
+What would you like to do?
+1: Enter a new Contact
+2: Retrieve a Contact
+3: Print a Contact List
+4: Quit
+Please enter a number from 1-4
+4
+QUIT AND SAVE TO FILE
+*/
+

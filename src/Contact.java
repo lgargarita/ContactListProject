@@ -1,7 +1,6 @@
 /**
  * Defines reusable class "Contact"
- * Sets variables for contact components
- * 
+ * Sets variables for contact information and stores into an array
  */
 import java.util.*;
 
@@ -14,7 +13,6 @@ public class Contact{
 	private String Email;
 	private String Notes;
 	private String Phone;
-
 	private String street;
 	private String city;
 	private String state;
@@ -23,8 +21,7 @@ public class Contact{
 	/**
 	 * Constructor to set default string values to variables
 	 */
-	public Contact()
-	{
+	public Contact(){
 		//Assign default variables when new Contact object created
 	}
 	/**
