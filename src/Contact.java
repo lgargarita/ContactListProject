@@ -1,6 +1,8 @@
 /**
  * Defines reusable class "Contact"
- * Sets variables for contact information and stores into an array
+ * One object of this class represents a single contact entered by the user
+ * comprising of a first name, last name, street, city, state, zip code, country,
+ * phone number, e-mail address, and any notes the user may have.
  */
 import java.util.*;
 
@@ -8,16 +10,17 @@ public class Contact{
 	/**
 	 * Variables for all components of a contact
 	 */
-	private String FirstName;
-	private String LastName;
-	private String Email;
-	private String Notes;
-	private String Phone;
+	private String firstname;
+	private String lastname;
 	private String street;
 	private String city;
 	private String state;
 	private String zip;
 	private String country;
+	private String email;
+	private String notes;
+	private String phone;
+	
 	/**
 	 * Constructor to set default string values to variables
 	 */
@@ -30,11 +33,9 @@ public class Contact{
 	public void setContact(){
 		System.out.println("PROMPT USER, SET CONTACT VARIABLES");
 	}
-	/**
-	 * Stores contact in array
-	 */
-	public void storeContact(){
-		System.out.println("STORE CONTACT TO ARRAY");
+	public String toString(){
+		return "FORMATTED CONTACT INFORMATION";
 	}
 }
 	
+
