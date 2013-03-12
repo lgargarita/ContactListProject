@@ -30,7 +30,7 @@ public class TestContactList
 				case 1:
 					Contact newContact = new Contact();
 					newContact.setContact();
-					newContact.storeContact();
+					contactlist.addContact();
 					break;
 				case 2:
 					int choice2;
@@ -153,4 +153,3 @@ Please enter a number from 1-4
 4
 QUIT AND SAVE TO FILE
 */
-
