@@ -9,6 +9,9 @@ public class List {
 	private static final int SIZE = 100;
 	private Contact[] list = new Contact[SIZE];
 	
+	public void addContact(){
+		System.out.println("ADD CONTACT TO LIST");
+	}
 	/**
 	 * Searches the array by last name and prints results to console
 	 */
