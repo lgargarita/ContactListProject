@@ -1,11 +1,9 @@
-
 /**
  * Tests Contact and List classes with console UI
  */
 
-public class TestContactList 
-{
-	public static void main(String [] args){
+public class TestContactList {
+	public static void main(String[] args) {
 		List contactlist = new List();
 		contactlist.addContact();
 		contactlist.addContact();
