@@ -4,10 +4,12 @@
  * comprising of a first name, last name, street, city, state, zip code, country,
  * phone number, e-mail address, and any notes the user may have.
  */
-import java.util.*;
+import java.io.Serializable;
+import java.util.Scanner;
 
-public class Contact{
-	Scanner sc;
+
+public class Contact implements Serializable {
+	transient Scanner sc;
 	/**
 	 * Variables for all components of a contact
 	 */
@@ -40,7 +42,6 @@ public class Contact{
 	}
 	/**
 	 * Prompts user for information and sets the variables
-	 * Checks for last name entry
 	 */
 	//TODO: Add capital letter validation
 	public void setContact(){
@@ -101,5 +102,4 @@ public class Contact{
 		return lastname+","+firstname+"\n"+street+"\n"+city+","+state+" "+zip+" "+country+"\n"+"Phone: "+phone+"\n"+"E-mail: "+email+"\n"+"Notes: "+notes;
 	}
 }
-
 
