@@ -1,3 +1,4 @@
+
 /**
  * Defines reusable class List
  * Creates array of Contact objects to store contacts
@@ -7,10 +8,23 @@
 public class List {
 	
 	private static final int SIZE = 100;
-	private Contact[] list = new Contact[SIZE];
+	private int count;
+	Contact[] list;
 	
+	public List(){
+		list = new Contact[SIZE];
+		count = 0;
+	}
+	/**
+	 * Adds contact to array
+	 * @param new 
+	 */
 	public void addContact(){
-		System.out.println("ADD CONTACT TO LIST");
+
+		Contact newcontact = new Contact();
+		newcontact.setContact();
+		list[count] = newcontact;
+		count++;
 	}
 	/**
 	 * Searches the array by last name and prints results to console
@@ -34,7 +48,10 @@ public class List {
 	 * Prints entire contact list
 	 */
 	public void printContacts(){
-		System.out.println("PRINT ALL CONTACTS"); //TODO Prints all contacts sorted by last name
+		for (int i = 0; i <= count; i++){
+				System.out.println(list[i]);
+				System.out.println();
+		}
 	}
 	/**
 	 * Saves array to file
