@@ -1,4 +1,3 @@
-
 /**
  * Defines reusable class List
  * Creates array of Contact objects to store contacts
@@ -65,4 +64,38 @@ public class List {
 	public void readFile(){
 		System.out.println("READ FROM FILE");
 	}
+	public void SaveData(){
+		ObjectOutputStream outObject;
+		  FileOutputStream outFile;
+	      try  {
+	         outFile = new FileOutputStream("outFile");     
+	         outObject = new ObjectOutputStream(outFile);
+	         outObject.writeObject(list);
+	         outFile.close();
+	         outObject.close();     
+
+	      } catch (IOException ioe)  {
+	         System.out.println ("Error writing objects to the file: "+ ioe.getMessage());
+	      }
+	      }
+	 
+		
+		/**
+		 * Reads from file
+		 */
+
+			public void loadData(){
+				System.out.println("READ FROM FILE");
+				ObjectInputStream inObject;
+				FileInputStream inFile;
+				try {
+					inFile = new FileInputStream("outFile");
+					inObject = new ObjectInputStream(inFile);
+					list = (Contlist[]) inObject.readObject();
+					inFile.close();
+					inObject.close();
+				} catch (IOException ioe) {
+					System.out.println("You have no stored data.");
+				} catch (ClassNotFoundException cnfe) {
+					System.out.print("");
 }
