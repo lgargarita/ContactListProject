@@ -4,17 +4,12 @@
 
 public class TestContactList {
 	public static void main(String[] args) {
-		List contactlist = new List();
-		contactlist.addContact();
-		contactlist.addContact();
-		contactlist.saveData();
-		contactlist.clearArray();
-		contactlist.loadData();
-		System.out.println("Current contacts: ");
-		System.out.println();
-		contactlist.printContacts();
+		System.out.println("Welcome to the QualitySoft Address Book!" + "\n");
+		Menu.printMenu();
+		
 	}
 }
+
 
 /*
 Please enter a first name.
