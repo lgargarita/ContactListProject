@@ -7,7 +7,11 @@
 import java.io.Serializable;
 import java.util.Scanner;
 
-public class Contact implements Serializable {
+public class Contact implements Serializable, Comparable<Contact>{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	transient Scanner sc;
 	/**
 	 * Variables for all components of a contact
@@ -50,9 +54,11 @@ public class Contact implements Serializable {
 		while (firstname == null || firstname.trim().isEmpty()) {
 			firstname = "n/a";
 		}
-		while (lastname == null || lastname.trim().isEmpty()) {
-			System.out.println("Please enter a last name.");
-			lastname = sc.nextLine();
+		System.out.println("Please enter a last name.");
+		lastname = sc.nextLine();
+			while (lastname.trim().isEmpty()){
+				System.out.println("Contact must have a last name. Please enter a last name.");
+				lastname = sc.nextLine();
 		}
 		System.out.println("Please enter street address.");
 		street = sc.nextLine();
@@ -95,6 +101,21 @@ public class Contact implements Serializable {
 			notes = "n/a";
 		}
 	}
+	/**
+	 * Clears contact information if user selects "no" when prompted to verify
+	 */
+	public void clearContacts(){ //LG: Added this to make addContact() go more smoothly
+		firstname = null;
+		lastname = null;
+		email = null;
+		notes = null;
+		phone = null;
+		street = null;
+		city = null;
+		state = null;
+		zip = null;
+		country = null;
+	}
 
 	/**
 	 * Returns contact entered
@@ -103,5 +124,14 @@ public class Contact implements Serializable {
 		return lastname + "," + firstname + "\n" + street + "\n" + city + ","
 				+ state + " " + zip + " " + country + "\n" + "Phone: " + phone
 				+ "\n" + "E-mail: " + email + "\n" + "Notes: " + notes;
+	}
+	
+	/**
+	 * For sorting/comparing Contact objects
+	 */
+	
+	public int compareTo(Contact arg0) {
+		// TODO Auto-generated method stub
+		return 0;
 	}
 }
