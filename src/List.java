@@ -9,19 +9,27 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
 import java.util.Arrays;
+import java.util.Scanner;
 
 public class List implements Serializable {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private static final int SIZE = 100;
 	private int count;
-	Contact[] list;
+	private static Contact[] list;
+	private Scanner console;
+	private Contact newcontact;
 
 	/**
 	 * Constructor initializes array and sets count to zero
 	 */
 	public List() {
-		list = new Contact[SIZE];
 		count = 0;
+		list = new Contact[SIZE];
+		console = new Scanner(System.in);
 	}
 
 	/**
@@ -33,13 +41,36 @@ public class List implements Serializable {
 
 	/**
 	 * Creates new Contact object and adds to array in order of entry
+	 * Verifies whether or not entry is correct and starts over when
 	 */
 	public void addContact() {
-		Contact newcontact = new Contact();
-		newcontact.setContact();
-		list[count] = newcontact;
-		count++;
+		char confirm;
+		boolean s = true;
+		boolean d;
+		newcontact = new Contact();
+		while (s) {
+			newcontact.setContact();
+			System.out.println("You entered:" + "\n" + "\n"+ newcontact.toString() + "\n" + "\n" + "Is this correct?");
+			d = true;
+			while (d) {
+				confirm = console.next().toLowerCase().charAt(0);
+				if (confirm == 'y') {
+					s = false;
+					list[count] = newcontact;
+					count++;
+					System.out.println("Contact added!" + "\n" + "\n");
+					Menu.printMenu();
+				} else if (confirm == 'n') {
+					newcontact.clearContacts();
+					d = false;
+				} else {
+					System.out.println("Please enter \"y\" for yes or \"n\" for no.");
+				}
+			}
+		}
+
 	}
+		
 
 	/**
 	 * Searches the array by last name and prints results to console
@@ -58,7 +89,7 @@ public class List implements Serializable {
 	 */
 	public void searchByEmail() {
 		System.out.println("DISPLAY contactsOut BY EMAIL ADDRESS");
-		; // TODO display all contactsOut with specified e-mail address
+		// TODO display all contactsOut with specified e-mail address
 	}
 
 	/**
@@ -78,11 +109,15 @@ public class List implements Serializable {
 	 */
 	public void printContacts() {
 		for (int i = 0; i <= count; i++) {
-			System.out.println(list[i]);
-			System.out.println();
+			if (list[i] == null) {
+				System.out.print("");
+			} else {
+				System.out.println(list[i]);
+				System.out.println();
+			}
 		}
 	}
-
+	
 	/**
 	 * Saves array and count value to file named "contactData"
 	 */
@@ -98,8 +133,7 @@ public class List implements Serializable {
 			outFile.close();
 			outObject.close();
 		} catch (IOException ioe) {
-			System.out.println("Error writing objects to the file: "
-					+ ioe.getMessage());
+			System.out.println("Error writing objects to the file: "+ ioe.getMessage());
 		}
 	}
 
@@ -117,12 +151,10 @@ public class List implements Serializable {
 			inFile.close();
 			inObject.close();
 		} catch (IOException ioe) {
-			System.out.println("Error reading from the file: "
-					+ ioe.getMessage());
+			System.out.println("Error reading from the file: "+ ioe.getMessage());
 		} catch (ClassNotFoundException cnfe) {
 			System.out.println("Error in casting to Rectangle: " + cnfe);
 
 		}
 	}
 }
-
