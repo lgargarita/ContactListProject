@@ -5,6 +5,7 @@
 public class TestContactList {
 	public static void main(String[] args) {
 		System.out.println("Welcome to the QualitySoft Address Book!" + "\n");
+		Menu.loadData();
 		Menu.printMenu();
 		
 	}
