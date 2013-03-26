@@ -20,7 +20,6 @@ public class Menu {
 	 */
 		
 	public static void printMenu() {
-		contactlist.loadData(); //TODO: Need a way to create a save file when the program is first started up
 		Scanner console = new Scanner(System.in);
 		System.out.println("What would you like to do?" + "\n"
 				+ "1: Enter a new Contact" + "\n" + "2: Retrieve a Contact"
