@@ -1,12 +1,11 @@
 import java.util.Scanner;
 
 public class Menu {
-  private static int choice;
-	private static List contactlist;
+	private static int choice;
+	private static List contactlist = new List();
 
 		
 	public static void printMenu() {
-		contactlist = new List();
 		contactlist.loadData(); //TODO: Need a way to create a save file when the program is first started up
 		Scanner console = new Scanner(System.in);
 		System.out.println("What would you like to do?" + "\n"
@@ -57,6 +56,7 @@ public class Menu {
 			break;
 		case 4:
 			contactlist.saveData();
+			System.out.println("Thank you for choosing QualitySoft!");
 			break;
 		default:
 			System.out.println("Invalid Response. Please try again.");
