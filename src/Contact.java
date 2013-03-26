@@ -46,7 +46,7 @@ public class Contact implements Serializable, Comparable<Contact>{
 	/**
 	 * Prompts user for information and sets the variables
 	 */
-
+	public void setContact(){
 	System.out.println("Please enter a last name.");
 		lastname = sc.nextLine();
 		while (lastname.trim().isEmpty()){
