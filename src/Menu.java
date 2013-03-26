@@ -62,7 +62,7 @@ public class Menu {
 			System.out.println("Invalid Response. Please try again.");
 			choice = console.nextInt();
 
-		}
+		}// By Miran
 		console.close();
 	}
 
