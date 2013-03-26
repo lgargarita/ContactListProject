@@ -11,6 +11,7 @@ public class Contact implements Serializable, Comparable<Contact>{
 
 	private static final long serialVersionUID = 1L;
 	transient Scanner sc;
+	
 	/**
 	 * Variables for all components of a contact
 	 */
@@ -40,7 +41,7 @@ public class Contact implements Serializable, Comparable<Contact>{
 		state = null;
 		zip = null;
 		country = null;
-	}
+	}// By Larry
 
 	/**
 	 * Prompts user for information and sets the variables
@@ -98,7 +99,8 @@ public class Contact implements Serializable, Comparable<Contact>{
 		while (notes == null || notes.trim().isEmpty()) {
 			notes = "n/a";
 		}
-	}
+	}//By Gabe
+	
 	/**
 	 * Clears contact information if user selects "no" when prompted to verify
 	 */
@@ -113,25 +115,29 @@ public class Contact implements Serializable, Comparable<Contact>{
 		state = null;
 		zip = null;
 		country = null;
-	}
+	}// By Larry
+	
 	/**
 	 * Getter to return last name for search function
 	 */
 	public String getLastName(){
 		return lastname;
-	}
+	}// By Larry
+	
 	/**
 	 * Getter to return zip code for search function
 	 */
 	public String getZip(){
 		return zip;
-	}
+	}// By Larry
+	
 	/**
 	 * Getter to return e-mail address for search function
 	 */
 	public String getEmail(){
 		return email;
-	}
+	}// By Larry
+	
 	/**
 	 * Returns contact entered
 	 */
@@ -139,7 +145,7 @@ public class Contact implements Serializable, Comparable<Contact>{
 		return lastname + "," + firstname + "\n" + street + "\n" + city + ","
 				+ state + " " + zip + " " + country + "\n" + "Phone: " + phone
 				+ "\n" + "E-mail: " + email + "\n" + "Notes: " + notes;
-	}
+	}// By Larry
 	
 	/**
 	 * For sorting/comparing Contact objects
@@ -148,5 +154,5 @@ public class Contact implements Serializable, Comparable<Contact>{
 	public int compareTo(Contact other) {
 		int i = lastname.toLowerCase().compareTo(other.lastname.toLowerCase());
 		return i;
-	}
+	}// By Larry
 }
