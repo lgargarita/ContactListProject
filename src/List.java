@@ -13,9 +13,6 @@ import java.util.Scanner;
 
 public class List implements Serializable {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 	private static final int SIZE = 100;
 	private int count;
