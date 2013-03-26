@@ -8,9 +8,7 @@ import java.io.Serializable;
 import java.util.Scanner;
 
 public class Contact implements Serializable, Comparable<Contact>{
-	/**
-	 * 
-	 */
+
 	private static final long serialVersionUID = 1L;
 	transient Scanner sc;
 	/**
@@ -28,7 +26,7 @@ public class Contact implements Serializable, Comparable<Contact>{
 	private String country;
 
 	/**
-	 * Constructor assigns variables as null Initializes scanner
+	 * Constructor assigns variables as null and initializes scanner
 	 */
 	public Contact() {
 		sc = new Scanner(System.in);
@@ -47,7 +45,7 @@ public class Contact implements Serializable, Comparable<Contact>{
 	/**
 	 * Prompts user for information and sets the variables
 	 */
-	// TODO: Add capital letter validation
+
 	public void setContact() {
 		System.out.println("Please enter a first name.");
 		firstname = sc.nextLine();
@@ -116,7 +114,24 @@ public class Contact implements Serializable, Comparable<Contact>{
 		zip = null;
 		country = null;
 	}
-
+	/**
+	 * Getter to return last name for search function
+	 */
+	public String getLastName(){
+		return lastname;
+	}
+	/**
+	 * Getter to return zip code for search function
+	 */
+	public String getZip(){
+		return zip;
+	}
+	/**
+	 * Getter to return e-mail address for search function
+	 */
+	public String getEmail(){
+		return email;
+	}
 	/**
 	 * Returns contact entered
 	 */
@@ -130,8 +145,8 @@ public class Contact implements Serializable, Comparable<Contact>{
 	 * For sorting/comparing Contact objects
 	 */
 	
-	public int compareTo(Contact arg0) {
-		// TODO Auto-generated method stub
-		return 0;
+	public int compareTo(Contact other) {
+		int i = lastname.toLowerCase().compareTo(other.lastname.toLowerCase());
+		return i;
 	}
 }
