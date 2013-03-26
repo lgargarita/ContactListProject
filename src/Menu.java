@@ -11,7 +11,7 @@ public class Menu {
 	 * Loads data from save file
 	 */
 	
-	private static void loadData(){
+	public static void loadData(){
 		contactlist.loadData();
 	}//by Larry
 	
