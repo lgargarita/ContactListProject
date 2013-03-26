@@ -47,59 +47,65 @@ public class Contact implements Serializable, Comparable<Contact>{
 	 * Prompts user for information and sets the variables
 	 */
 
-	public void setContact() {
-		System.out.println("Please enter a first name.");
-		firstname = sc.nextLine();
-		while (firstname == null || firstname.trim().isEmpty()) {
-			firstname = "n/a";
-		}
-		System.out.println("Please enter a last name.");
+	System.out.println("Please enter a last name.");
 		lastname = sc.nextLine();
-			while (lastname.trim().isEmpty()){
-				System.out.println("Contact must have a last name. Please enter a last name.");
-				lastname = sc.nextLine();
+		while (lastname.trim().isEmpty()){
+			lastname = "n/a";
 		}
-		System.out.println("Please enter street address.");
-		street = sc.nextLine();
-		while (street == null || street.trim().isEmpty()) {
-			street = "n/a";
+		if(lastname != "n/a"){
+			System.out.println("Please enter a first name.");
+			firstname = sc.nextLine();
+			while (firstname == null || firstname.trim().isEmpty()) {
+				firstname = "n/a";
+			}
+			
+			System.out.println("Please enter street address.");
+			street = sc.nextLine();
+			while (street == null || street.trim().isEmpty()) {
+				street = "n/a";
+			}
+			System.out.println("Please enter city.");
+			city = sc.nextLine();
+			while (city == null || city.trim().isEmpty()) {
+				city = "n/a";
+			}
+			System.out.println("Please enter state.");
+			state = sc.nextLine();
+			while (state == null || state.trim().isEmpty()) {
+				state = "n/a";
+			}
+			System.out.println("Please enter zip code.");
+			zip = sc.nextLine();
+			while (zip == null || zip.trim().isEmpty()) {
+				zip = "n/a";
+			}
+			System.out.println("Please enter country.");
+			country = sc.nextLine();
+			while (country == null || country.trim().isEmpty()) {
+				country = "n/a";
+			}
+			System.out.println("Please enter phone number.");
+			phone = sc.nextLine();
+			while (phone == null || phone.trim().isEmpty()) {
+				phone = "n/a";
+			}
+			System.out.println("Please enter e-mail address.");
+			email = sc.nextLine();
+			while (email == null || email.trim().isEmpty()) {
+				email = "n/a";
+			}
+			System.out.println("Please enter notes.");
+			notes = sc.nextLine();
+			while (notes == null || notes.trim().isEmpty()) {
+				notes = "n/a";
+			}
 		}
-		System.out.println("Please enter city.");
-		city = sc.nextLine();
-		while (city == null || city.trim().isEmpty()) {
-			city = "n/a";
+		else{
+			System.out.println("A last name is required. This contact entry has been cancelled.");
+			System.out.println("---------------------------------------------------------------");
+			Menu.printMenu();
 		}
-		System.out.println("Please enter state.");
-		state = sc.nextLine();
-		while (state == null || state.trim().isEmpty()) {
-			state = "n/a";
-		}
-		System.out.println("Please enter zip code.");
-		zip = sc.nextLine();
-		while (zip == null || zip.trim().isEmpty()) {
-			zip = "n/a";
-		}
-		System.out.println("Please enter country.");
-		country = sc.nextLine();
-		while (country == null || country.trim().isEmpty()) {
-			country = "n/a";
-		}
-		System.out.println("Please enter phone number.");
-		phone = sc.nextLine();
-		while (phone == null || phone.trim().isEmpty()) {
-			phone = "n/a";
-		}
-		System.out.println("Please enter e-mail address.");
-		email = sc.nextLine();
-		while (email == null || email.trim().isEmpty()) {
-			email = "n/a";
-		}
-		System.out.println("Please enter notes.");
-		notes = sc.nextLine();
-		while (notes == null || notes.trim().isEmpty()) {
-			notes = "n/a";
-		}
-	}//By Gabe
+	}//By Gabe and Miran
 	
 	/**
 	 * Clears contact information if user selects "no" when prompted to verify
