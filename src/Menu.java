@@ -1,9 +1,23 @@
+/**
+ *Menu class contains static methods for loading data and for printing the menu to console
+ */
 import java.util.Scanner;
 
 public class Menu {
 	private static int choice;
 	private static List contactlist = new List();
-
+	
+	/**
+	 * Loads data from save file
+	 */
+	
+	private static void loadData(){
+		contactlist.loadData();
+	}//by Larry
+	
+	/**
+	 *Prints the menu to console 
+	 */
 		
 	public static void printMenu() {
 		contactlist.loadData(); //TODO: Need a way to create a save file when the program is first started up
