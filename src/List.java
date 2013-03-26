@@ -30,14 +30,14 @@ public class List implements Serializable {
 		count = 0;
 		list = new Contact[SIZE];
 		console = new Scanner(System.in);
-	}
+	}// By Larry
 
 	/**
 	 * Clears the array for the purpose of testing saving and loading methods
 	 */
 	public void clearArray() {
 		Arrays.fill(list, null);
-	}
+	}// By Larry
 
 	/**
 	 * Creates new Contact object and adds to array in order of entry
@@ -68,7 +68,7 @@ public class List implements Serializable {
 				}
 			}
 			Menu.printMenu();
-		}
+		}//By Larry
 
 	}
 		
@@ -89,7 +89,7 @@ public class List implements Serializable {
 		}
 		System.out.println("\n"+results+" contacts found."+"\n");
 		Menu.printMenu();
-	}
+	}// By Gabe and Larry
 
 	/**
 	 * Searches the array by e-mail address and displays results to console
@@ -107,7 +107,7 @@ public class List implements Serializable {
 		}
 		System.out.println("\n"+results+" contacts found."+"\n");
 		Menu.printMenu();
-	}
+	}// By Gabe and Larry
 
 
 	/**
@@ -126,7 +126,7 @@ public class List implements Serializable {
 		}
 		System.out.println("\n"+results+" contacts found."+"\n");
 		Menu.printMenu();
-	}
+	}// By Gabe and Larry
 
 
 	/**
@@ -139,7 +139,7 @@ public class List implements Serializable {
 				System.out.println();
 			}
 		Menu.printMenu();
-	}
+	}// By Miran
 	
 	/**
 	 * Saves array and count value to file named "contactData"
@@ -158,7 +158,7 @@ public class List implements Serializable {
 		} catch (IOException ioe) {
 			System.out.println("Error writing objects to the file: "+ ioe.getMessage());
 		}
-	}
+	}// By Gabe
 
 	/**
 	 * Reads from contactData save file
@@ -179,5 +179,5 @@ public class List implements Serializable {
 			System.out.println("Error in casting to Rectangle: " + cnfe);
 
 		}
-	}
+	}// By Gabe
 }
