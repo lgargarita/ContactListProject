@@ -19,7 +19,7 @@ public class List implements Serializable {
 	private static final long serialVersionUID = 1L;
 	private static final int SIZE = 100;
 	private int count;
-	private static Contact[] list;
+	private Contact[] list;
 	private Scanner console;
 	private Contact newcontact;
 
@@ -47,19 +47,19 @@ public class List implements Serializable {
 		char confirm;
 		boolean s = true;
 		boolean d;
-		newcontact = new Contact();
+		this.newcontact = new Contact();
 		while (s) {
-			newcontact.setContact();
-			System.out.println("You entered:" + "\n" + "\n"+ newcontact.toString() + "\n" + "\n" + "Is this correct?");
+			this.newcontact.setContact();
+			System.out.println("You entered:" + "\n" + "\n"+ this.newcontact.toString() + "\n" + "\n" + "Is this correct?");
 			d = true;
 			while (d) {
 				confirm = console.next().toLowerCase().charAt(0);
 				if (confirm == 'y') {
-					s = false;
-					list[count] = newcontact;
+					list[count] = this.newcontact;
 					count++;
-					System.out.println("Contact added!" + "\n" + "\n");
-					Menu.printMenu();
+					System.out.println("Contact added!");
+					d = false;
+					s = false;
 				} else if (confirm == 'n') {
 					newcontact.clearContacts();
 					d = false;
@@ -67,6 +67,7 @@ public class List implements Serializable {
 					System.out.println("Please enter \"y\" for yes or \"n\" for no.");
 				}
 			}
+			Menu.printMenu();
 		}
 
 	}
@@ -76,46 +77,68 @@ public class List implements Serializable {
 	 * Searches the array by last name and prints results to console
 	 */
 	public void searchByLastName() {
-		System.out.println("DISPLAY contactsOut BY LAST NAME"); // TODO display
-																// all
-																// contactsOut
-																// with
-																// specified
-																// last name
+		String search;
+		int results = 0;
+		System.out.println("Please enter a last name.");
+		search = console.next();
+		for (int i = 0; i < list.length && list[i] != null; i++){
+			if (search.toLowerCase().equals(list[i].getLastName().toLowerCase())){
+				results++;
+				System.out.println(list[i]+"\n");
+			}
+		}
+		System.out.println("\n"+results+" contacts found."+"\n");
+		Menu.printMenu();
 	}
 
 	/**
 	 * Searches the array by e-mail address and displays results to console
 	 */
 	public void searchByEmail() {
-		System.out.println("DISPLAY contactsOut BY EMAIL ADDRESS");
-		// TODO display all contactsOut with specified e-mail address
+		String search;
+		int results = 0;
+		System.out.println("Please enter an e-mail address.");
+		search = console.next();
+		for (int i = 0; i < list.length && list[i] != null; i++){
+			if (search.toLowerCase().equals(list[i].getEmail().toLowerCase())){
+				results++;
+				System.out.println(list[i]+"\n");
+			}
+		}
+		System.out.println("\n"+results+" contacts found."+"\n");
+		Menu.printMenu();
 	}
+
 
 	/**
 	 * Searches the array by zip code and displays results to console
 	 */
 	public void searchByZip() {
-		System.out.println("DISPLAY contactsOut BY ZIP CODE"); // TODO display
-																// all
-																// contactsOut
-																// with
-																// specified zip
-																// code
+		String search;
+		int results = 0;
+		System.out.println("Please enter a zip code.");
+		search = console.next();
+		for (int i = 0; i < list.length && list[i] != null; i++){
+			if (search.equals(list[i].getZip())){
+				results++;
+				System.out.println(list[i]+"\n");
+			}
+		}
+		System.out.println("\n"+results+" contacts found."+"\n");
+		Menu.printMenu();
 	}
+
 
 	/**
 	 * Prints entire contact list
 	 */
 	public void printContacts() {
-		for (int i = 0; i <= count; i++) {
-			if (list[i] == null) {
-				System.out.print("");
-			} else {
+		//Arrays.sort(list);
+		for (int i = 0; i < list.length && list[i] != null; i++) {
 				System.out.println(list[i]);
 				System.out.println();
 			}
-		}
+		Menu.printMenu();
 	}
 	
 	/**
